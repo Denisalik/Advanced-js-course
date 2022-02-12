@@ -4,8 +4,7 @@ Stack:
  * React
  * Typescript
  * Redux
- * Material Ui
- * Nginx
+ * Material Ui + Styled Components
  * Jest
 
 to install dependencies:`npm install`

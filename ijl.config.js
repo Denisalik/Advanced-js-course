@@ -8,10 +8,10 @@ module.exports = {
         }
     },
     navigations: {
-        'ijl.main': '/'
+        'lichessengine.main': '/'
     },
     features: {
-        'ijl': {
+        'lichessengine': {
             // add your features here in the format [featureName]: { value: string }
         },
     },
