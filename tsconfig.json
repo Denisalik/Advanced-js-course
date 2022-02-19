@@ -1,43 +1,40 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "dom",
-            "es2017",
-            //added new libs
-            "dom.iterable",
-            "esnext"
-        ],
-        "baseUrl": ".",
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "noImplicitAny": true,//changed from false
-        "module": "esnext",
-        "moduleResolution": "node",
-        "target": "es6",
-        "jsx": "react-jsx",//changed from react
-        "typeRoots": ["node_modules/@types", "src/typings"],
-        "types" : ["webpack-env", "node"],
-        "resolveJsonModule": true,
-        
-        //added new rules
-        "allowJs": true,
-        "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "noImplicitThis": true,
-        "strictNullChecks": true,
-    },
-    "exclude": [
-        "node_modules",
-        "**/*.test.ts",
-        "**/*.test.tsx",
-        "node_modules/@types/jest"
-    ]        
-        
-  }
-  
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2017",
+      //added new libs
+      "dom.iterable",
+      "esnext"
+    ],
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true, //changed from false
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es6",
+    "jsx": "react-jsx", //changed from react
+    "typeRoots": ["node_modules/@types", "src/typings"],
+    "types": ["webpack-env", "node"],
+    "resolveJsonModule": true,
+    //added new rules
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "node_modules/@types/jest"
+  ]
+}
