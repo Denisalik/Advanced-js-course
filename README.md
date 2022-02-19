@@ -1,4 +1,7 @@
-Version of NodeJS v14.18.3
+Version of NodeJS v16.14.0
+
+ProjectName: PongMe
+
 
 Stack:
  * React
@@ -8,4 +11,5 @@ Stack:
  * Jest
 
 to install dependencies:`npm install`
+
 to start dev server: `npm start`
