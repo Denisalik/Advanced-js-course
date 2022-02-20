@@ -20,4 +20,5 @@ to start dev server: `npm start`
 Links:
  * [Frontend](https://github.com/Denisalik/Advanced-js-course)
  * [Backend](https://github.com/Denisalik/js-course-backend)
- * Design
+ * [Design](https://github.com/desmigor/js-course-designs)
+ 
