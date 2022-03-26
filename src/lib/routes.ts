@@ -2,35 +2,39 @@ import React from "react";
 
 enum PathStrings {
   HOME = "/",
+  AUTH = "/auth",
 }
-// interface Home {
-//     path: pathStrings.HOME
-// }
-// interface Stats {
-//     path: pathStrings.STATS
-// }
-// type Path = (Home | Stats) & {name: string}
 
-// export const paths: Path[] = [
-//     {
-//         path: pathStrings.HOME,
-//         name: "Home"
-//     },
-//     {
-//         path: pathStrings.STATS,
-//         name: "Statistics"
-//     }
-// ]
-// //in react-router-dom 6 we use element instead of component, no exact
-// const stats = React.lazy(() => import("./components/stats/Stats"));
-// const list = React.lazy(() => import("./components/expenses/List"));
-// export const routes = [
-//     {
-//         path: pathStrings.HOME,
-//         element: list
-//     },
-//     {
-//         path: pathStrings.STATS,
-//         element: stats
-//     },
-// ]
+interface Home {
+  path: PathStrings.HOME;
+}
+
+interface Auth {
+  path: PathStrings.AUTH;
+}
+
+type Path = (Home | Auth) & { name: string };
+
+export const paths: Path[] = [
+  {
+    path: PathStrings.HOME,
+    name: "Home",
+  },
+  {
+    path: PathStrings.AUTH,
+    name: "Auth",
+  },
+];
+
+const AuthComponent = React.lazy(() => import("../components/auth/Auth"));
+const HomeComponent = React.lazy(() => import("../components/game/Home"));
+export const routes = [
+  {
+    path: PathStrings.HOME,
+    element: HomeComponent,
+  },
+  {
+    path: PathStrings.AUTH,
+    element: AuthComponent,
+  },
+];

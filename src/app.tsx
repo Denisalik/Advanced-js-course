@@ -1,8 +1,10 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { store } from "./redux/store";
+import { paths, routes } from "./lib/routes";
+import Loading from "./components/shared/Loading";
 
 const App: React.FC = () => (
   <React.StrictMode>
@@ -16,22 +18,28 @@ const App: React.FC = () => (
             minHeight: "calc(100vh - 64px)",
           }}
         >
-          {/* <Routes>
-                    {routes.map(route => (
-                        <Route key={route.path} path={route.path} element={(
-                            <Suspense fallback={<Loading/>}>
-                                <route.element/>
-                            </Suspense>
-                        )}/>
-                    ))}
-
-                    <Route path="*" element={(
-                        <Suspense fallback={<Loading/>}>
-                            Home is first element in paths array
-                            <Navigate to={paths[0].path}/>
-                        </Suspense>
-                    )}/>
-                </Routes> */}
+          <Routes>
+            {routes.map(route => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
+                  <React.Suspense fallback={<Loading />}>
+                    <route.element />
+                  </React.Suspense>
+                }
+              />
+            ))}
+            <Route
+              path="*"
+              element={
+                <React.Suspense fallback={<Loading />}>
+                  Home is first element in paths array
+                  <Navigate to={paths[0].path} />
+                </React.Suspense>
+              }
+            />
+          </Routes>
         </Box>
       </BrowserRouter>
     </Provider>
