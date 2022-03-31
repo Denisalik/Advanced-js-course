@@ -27,4 +27,12 @@ export const palette = createPalette({
   texts: {
     primary: colors.gray4,
   },
+  textField: {
+    normal: { border: colors.gray2 },
+    active: { border: colors.blue2 },
+    hover: { border: colors.blue2 },
+    // disabled: {
+    //   border: colors.gray3,
+    // },
+  },
 });

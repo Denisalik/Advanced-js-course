@@ -17,14 +17,15 @@ module.exports = {
     },
   },
   navigations: {
-    "lichessengine.main": "/",
+    "lichessengine.main": "/lichessengine/",
+    "lichessengine.auth": "/lichessengine/auth",
   },
-  features: {
-    lichessengine: {
-      // add your features here in the format [featureName]: { value: string }
-    },
-  },
-  config: {
-    key: "value",
-  },
+  // features: {
+  //   "lichessengine.main": {
+  //     // add your features here in the format [featureName]: { value: string }
+  //   },
+  // },
+  // config: {
+  //   key: "value",
+  // },
 };

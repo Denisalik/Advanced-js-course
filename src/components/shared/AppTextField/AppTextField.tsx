@@ -1,19 +1,22 @@
 import React from "react";
-import { TextField, TextFieldProps } from "@mui/material";
+import { TextFieldProps } from "@mui/material";
+import AppTextFieldStyled from "./AppTextFieldStyled";
 
 interface AppTextFieldProps
-  extends Pick<TextFieldProps, "label" | "disabled" | "error"> {}
+  extends Pick<TextFieldProps, "label" | "disabled" | "error" | "color"> {}
 
 const AppTextField: React.FC<AppTextFieldProps> = ({
   label,
   disabled,
   error,
+  color,
 }) => (
-  <TextField
+  <AppTextFieldStyled
     label={label}
     disabled={disabled}
     error={error}
     variant="outlined"
+    color={color}
   />
 );
 export default AppTextField;

@@ -53,17 +53,17 @@ declare module "@mui/material/styles" {
   }
 }
 
-// typography interfaces
-declare module "@mui/material/styles/createTypography" {
-  interface Typography {
-    errorCode: TypographyStyle;
-  }
-  interface TypographyOptions {
-    errorCode?: TypographyStyleOptions;
-  }
-}
-declare module "@mui/material/Typography/Typography" {
-  interface TypographyPropsVariantOverrides {
-    errorCode: true;
-  }
-}
+// // typography interfaces
+// declare module "@mui/material/styles/createTypography" {
+//   interface Typography {
+//     errorCode: TypographyStyle;
+//   }
+//   interface TypographyOptions {
+//     errorCode?: TypographyStyleOptions;
+//   }
+// }
+// declare module "@mui/material/Typography/Typography" {
+//   interface TypographyPropsVariantOverrides {
+//     errorCode: true;
+//   }
+// }

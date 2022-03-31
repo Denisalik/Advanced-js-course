@@ -18,7 +18,7 @@ const Auth: React.FC = () => {
             <Tab label="Sign up" />
           </Tabs>
         </Grid>
-        <Grid item>{page === 0 ? <SignUp /> : <SignIn />}</Grid>
+        <Grid item>{page === 0 ? <SignIn /> : <SignUp />}</Grid>
       </Grid>
     </Paper>
   );

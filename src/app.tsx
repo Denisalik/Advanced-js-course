@@ -3,7 +3,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { store } from "./redux/store";
-import { paths, routes } from "./lib/routes";
+import { routes } from "./lib/routes";
+import { PathStrings } from "./lib/urls";
 import Loading from "./components/shared/Loading";
 
 const App: React.FC = () => (
@@ -22,7 +23,7 @@ const App: React.FC = () => (
             {routes.map(route => (
               <Route
                 key={route.path}
-                path={route.path}
+                path={route.path as unknown as string}
                 element={
                   <React.Suspense fallback={<Loading />}>
                     <route.element />
@@ -34,8 +35,7 @@ const App: React.FC = () => (
               path="*"
               element={
                 <React.Suspense fallback={<Loading />}>
-                  Home is first element in paths array
-                  <Navigate to={paths[0].path} />
+                  <Navigate to={PathStrings.HOME as unknown as string} />
                 </React.Suspense>
               }
             />

@@ -1,33 +1,14 @@
 import React from "react";
+import Auth from "../components/auth/Auth";
+import Home from "../components/home/Home";
+import { PathStrings } from "./urls";
 
-enum PathStrings {
-  HOME = "/",
-  AUTH = "/auth",
-}
+// const AuthComponent = React.lazy(() => import("../components/auth/Auth"));
+// const HomeComponent = React.lazy(() => import("../components/game/Home"));
 
-interface Home {
-  path: PathStrings.HOME;
-}
+const AuthComponent = Auth;
+const HomeComponent = Home;
 
-interface Auth {
-  path: PathStrings.AUTH;
-}
-
-type Path = (Home | Auth) & { name: string };
-
-export const paths: Path[] = [
-  {
-    path: PathStrings.HOME,
-    name: "Home",
-  },
-  {
-    path: PathStrings.AUTH,
-    name: "Auth",
-  },
-];
-
-const AuthComponent = React.lazy(() => import("../components/auth/Auth"));
-const HomeComponent = React.lazy(() => import("../components/game/Home"));
 export const routes = [
   {
     path: PathStrings.HOME,
