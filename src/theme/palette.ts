@@ -27,6 +27,9 @@ export const palette = createPalette({
   texts: {
     primary: colors.gray4,
   },
+  backgrounds: {
+    primary: colors.blue1,
+  },
   textField: {
     normal: { border: colors.gray2 },
     active: { border: colors.blue2 },

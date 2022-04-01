@@ -45,6 +45,7 @@ declare module "@mui/material/styles" {
     texts: TextType;
     textField: ItemCondition;
   }
+
   interface PaletteOptions {
     button?: ButtonType;
     backgrounds?: Partial<BackgroundType>;
@@ -52,18 +53,3 @@ declare module "@mui/material/styles" {
     textField?: ItemCondition;
   }
 }
-
-// // typography interfaces
-// declare module "@mui/material/styles/createTypography" {
-//   interface Typography {
-//     errorCode: TypographyStyle;
-//   }
-//   interface TypographyOptions {
-//     errorCode?: TypographyStyleOptions;
-//   }
-// }
-// declare module "@mui/material/Typography/Typography" {
-//   interface TypographyPropsVariantOverrides {
-//     errorCode: true;
-//   }
-// }

@@ -11,11 +11,11 @@ const HomeComponent = Home;
 
 export const routes = [
   {
-    path: PathStrings.HOME,
-    element: HomeComponent,
-  },
-  {
     path: PathStrings.AUTH,
     element: AuthComponent,
+  },
+  {
+    path: PathStrings.HOME,
+    element: HomeComponent,
   },
 ];

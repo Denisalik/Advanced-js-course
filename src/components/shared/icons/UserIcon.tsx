@@ -1131,7 +1131,7 @@ const UserIcon: React.FC<UserIconProps> = ({ sx, iconVariant, ...props }) => {
   );
   const icons = [icon1, icon2, icon3, icon4, icon5, icon6];
   return (
-    <SvgIcon sx={sx} viewBox="0 0 16 16" {...props}>
+    <SvgIcon sx={sx} viewBox="0 0 60 60" {...props}>
       {icons[iconVariant]}
     </SvgIcon>
   );

@@ -9,7 +9,7 @@ module.exports = {
       new ESLintPlugin({
         extensions: ["ts", "tsx"],
         failOnError: true,
-        failOnWarning: true,
+        failOnWarning: false,
       }),
     ],
     output: {
@@ -17,7 +17,7 @@ module.exports = {
     },
   },
   navigations: {
-    "lichessengine.main": "/lichessengine/",
+    "lichessengine.main": "/lichessengine/home",
     "lichessengine.auth": "/lichessengine/auth",
   },
   // features: {

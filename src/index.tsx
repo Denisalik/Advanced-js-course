@@ -4,8 +4,8 @@ import ReactDom from "react-dom";
 import App from "./app";
 
 export default () => <App />;
-
-export const mount = (Component: React.ComponentClass) => {
+// @ts-ignore
+export const mount = Component => {
   ReactDom.render(<Component />, document.getElementById("app"));
 
   if (module.hot) {
@@ -16,5 +16,6 @@ export const mount = (Component: React.ComponentClass) => {
 };
 
 export const unmount = () => {
-  ReactDom.unmountComponentAtNode(document.getElementById("app") as Element);
+  // @ts-ignore
+  ReactDom.unmountComponentAtNode(document.getElementById("app"));
 };
