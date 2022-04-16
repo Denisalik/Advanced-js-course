@@ -1,13 +1,23 @@
+import { ActionStrings } from "../../actionsTypes";
+import { UserInfo } from "../../entities";
+
 export const actions = {
-  // fetchCategoriesSuccess: (payload: Category[]) => ({
-  //     type: actionStrings.FETCH_CATEGORIES_SUCCESS,
-  //     payload
-  // }),
-  // fetchCategoriesError: (payload: string) => ({
-  //     type: actionStrings.FETCH_CATEGORIES_ERROR,
-  //     payload
-  // }),
-  // fetchCategories: () => ({
-  //     type: actionStrings.FETCH_CATEGORIES
-  // }),
+  login: (payload: string) => ({
+    type: ActionStrings.LOGIN,
+    payload,
+  }),
+
+  relogin: (payload: UserInfo) => ({
+    type: ActionStrings.LOGIN,
+    payload,
+  }),
+
+  registration: (payload: string) => ({
+    type: ActionStrings.REGISTRATION,
+    payload,
+  }),
+  saveToken: (payload: string) => ({
+    type: ActionStrings.SAVE_TOKEN,
+    payload,
+  }),
 };

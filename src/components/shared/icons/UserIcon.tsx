@@ -4,6 +4,7 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 interface UserIconProps extends SvgIconProps {
   iconVariant: number;
 }
+
 /**
  * Icon for user
  * @param   {number} iconVariant variant from 1 to 6
@@ -1132,7 +1133,7 @@ const UserIcon: React.FC<UserIconProps> = ({ sx, iconVariant, ...props }) => {
   const icons = [icon1, icon2, icon3, icon4, icon5, icon6];
   return (
     <SvgIcon sx={sx} viewBox="0 0 60 60" {...props}>
-      {icons[iconVariant]}
+      {icons[iconVariant - 1]}
     </SvgIcon>
   );
 };

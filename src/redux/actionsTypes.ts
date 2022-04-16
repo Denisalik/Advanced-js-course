@@ -1,20 +1,30 @@
-export enum ActionStrings {}
-// FETCH_CATEGORIES = "FETCH_CATEGORIES",
-// FETCH_CATEGORIES_ERROR = "FETCH_CATEGORIES_ERROR",
-// FETCH_CATEGORIES_SUCCESS = "FETCH_CATEGORIES_SUCCESS",
+import { UserInfo } from "./entities";
 
-// interface fetchCategoriesSuccess {
-//     type: actionStrings.FETCH_CATEGORIES_SUCCESS;
-//     payload: Category[]
-// }
+export enum ActionStrings {
+  LOGIN = "LOGIN",
+  REGISTRATION = "REGISTRATION",
+  RELOGIN = "RELOGIN",
+  SAVE_TOKEN = "SAVE_TOKEN",
+}
 
-// interface fetchCategoriesError {
-//     type: actionStrings.FETCH_CATEGORIES_ERROR;
-//     payload: string
-// }
+interface Login {
+  type: ActionStrings.LOGIN;
+  payload: string;
+}
 
-// interface fetchCategories {
-//     type: actionStrings.FETCH_CATEGORIES
-// }
+interface Registration {
+  type: ActionStrings.REGISTRATION;
+  payload: string;
+}
 
-export type ActionTypes = { type: string }; // fetchCategories | fetchCategoriesError | fetchCategoriesSuccess;
+interface Relogin {
+  type: ActionStrings.RELOGIN;
+  payload: UserInfo;
+}
+
+interface SaveToken {
+  type: ActionStrings.SAVE_TOKEN;
+  payload: string;
+}
+
+export type ActionTypes = Login | Registration | Relogin | SaveToken;

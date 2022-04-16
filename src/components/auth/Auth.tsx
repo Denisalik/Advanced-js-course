@@ -3,6 +3,7 @@ import { Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
 import SignIn from "./login/SignIn";
 import SignUp from "./registration/SignUp";
 import Logo from "../shared/icons/Logo";
+import { PathStrings } from "../../lib/urls";
 
 const Auth: React.FC = () => {
   const [page, setPage] = React.useState(0);

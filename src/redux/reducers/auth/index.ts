@@ -1,28 +1,43 @@
-import { actionTypes } from "src/redux/actionsTypes";
+import { ActionStrings, ActionTypes } from "../../actionsTypes";
 
 interface AuthState {
   token: string;
-  error: string;
-  loading: boolean;
+  email: string;
+  username: string;
+  background: number;
+  avatar: number;
+  expirationDate: Date;
 }
 
 const initialState: AuthState = {
   token: "",
-  error: "",
-  loading: false,
+  email: "",
+  username: "",
+  background: 1,
+  avatar: 1,
+  expirationDate: new Date(0),
 };
-
+//todo save in localStorage
 export const reducer = (
   state: AuthState = initialState,
-  action: actionTypes
+  action: ActionTypes
 ): AuthState => {
   switch (action.type) {
-    // case actionStrings.FETCH_CATEGORIES:
-    //     return {...state, loading: true}
-    // case actionStrings.FETCH_CATEGORIES_SUCCESS:
-    //     return {...state, categories: action.payload, loading: false, error: ""};
-    // case actionStrings.FETCH_CATEGORIES_ERROR:
-    //     return {...state, error: action.payload, loading: false}
+    case ActionStrings.SAVE_TOKEN:
+      return { ...state, token: action.payload };
+    case ActionStrings.LOGIN:
+      return { ...state, token: action.payload };
+    case ActionStrings.REGISTRATION:
+      return { ...state, token: action.payload };
+    case ActionStrings.RELOGIN:
+      return {
+        ...state,
+        email: action.payload.email,
+        background: action.payload.background,
+        username: action.payload.username,
+        avatar: action.payload.avatar,
+        expirationDate: new Date(action.payload.exp),
+      };
     default:
       return state;
   }

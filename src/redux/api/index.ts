@@ -1,8 +1,11 @@
 export const api = {
-  URL: process.env.REACT_APP_BACKEND_URL,
-  PORT: "5000",
+  URL: process.env.REACT_APP_API_URL,
+  PORT: process.env.REACT_APP_API_PORT,
   API: {
-    // EXPENSES: "expenses",
-    // CATEGORIES: "categories"
+    API: "api",
+    AUTH: "auth",
+    LOGIN: "login",
+    RELOGIN: "relogin",
+    REGISTRATION: "registration",
   },
 };

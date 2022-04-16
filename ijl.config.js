@@ -1,4 +1,5 @@
 const ESLintPlugin = require("eslint-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 const pkg = require("./package");
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
   webpackConfig: {
     mode: "development",
     plugins: [
+      new Dotenv(),
       new ESLintPlugin({
         extensions: ["ts", "tsx"],
         failOnError: true,
