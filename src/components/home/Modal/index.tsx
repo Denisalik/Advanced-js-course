@@ -1,10 +1,9 @@
 import React from "react";
 import { Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
-import SignIn from "./login/SignIn";
-import SignUp from "./registration/SignUp";
-import Logo from "../shared/icons/Logo";
+import AccountSettings from "./AccountSettings";
+import GameSettings from "./GameSettings";
 
-const Auth: React.FC = () => {
+const Modal: React.FC = () => {
   const [page, setPage] = React.useState(0);
   const handleChange = (event: React.SyntheticEvent, newPage: number) => {
     setPage(newPage);
@@ -17,31 +16,28 @@ const Auth: React.FC = () => {
       flexDirection="column"
     >
       <Grid item>
-        <Logo
-          sx={{
-            height: "57px",
-            width: "263px",
-            marginBottom: "39px",
-          }}
-        />
-      </Grid>
-      <Grid item>
         <Paper
           elevation={1}
           sx={{
-            width: "476px",
-            height: page === 0 ? "497px" : "577px",
+            width: "500px",
+            height: "600px",
             padding: "0 30px 30px 30px",
           }}
         >
           <Grid container alignItems="center" flexDirection="column">
             <Grid item my={2}>
               <Tabs value={page} onChange={handleChange}>
-                <Tab label={<Typography variant="h5">Sign in</Typography>} />
-                <Tab label={<Typography variant="h5">Sign up</Typography>} />
+                <Tab
+                  label={<Typography variant="h6">Account Settings</Typography>}
+                />
+                <Tab
+                  label={<Typography variant="h6">Game Settings</Typography>}
+                />
               </Tabs>
             </Grid>
-            <Grid item>{page === 0 ? <SignIn /> : <SignUp />}</Grid>
+            <Grid item>
+              {page === 0 ? <AccountSettings /> : <GameSettings />}
+            </Grid>
           </Grid>
         </Paper>
       </Grid>
@@ -49,4 +45,4 @@ const Auth: React.FC = () => {
   );
 };
 
-export default Auth;
+export default Modal;

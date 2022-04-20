@@ -38,5 +38,7 @@ const AppTextField: React.FC<AppTextFieldProps> = ({
     onChange={onChange}
     helperText={helperText}
   />
+  // todo {values.showPassword ? <VisibilityOff /> : <Visibility />}
+  // todo https://mui.com/material-ui/react-text-field/#customized-inputs
 );
 export default AppTextField;

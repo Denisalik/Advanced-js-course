@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Background from "../home/Background/Background";
 import { routes } from "../../lib/routes";
 import { PathStrings } from "../../lib/urls";
-import Loading from "../shared/Loading";
 import { useAppActions } from "../../lib/hooks";
 
 const Wrapper: React.FC = () => {
@@ -24,20 +23,12 @@ const Wrapper: React.FC = () => {
           <Route
             key={route.path}
             path={route.path as unknown as string}
-            element={
-              // <React.Suspense fallback={<Loading />}>
-              <route.element />
-              // </React.Suspense>
-            }
+            element={<route.element />}
           />
         ))}
         <Route
           path="*"
-          element={
-            // <React.Suspense fallback={<Loading />}>
-            <Navigate to={PathStrings.AUTH as unknown as string} />
-            // </React.Suspense>
-          }
+          element={<Navigate to={PathStrings.AUTH as unknown as string} />}
         />
       </Routes>
     </Background>
