@@ -8,7 +8,7 @@ export const actions = {
   }),
 
   relogin: (payload: UserInfo) => ({
-    type: ActionStrings.LOGIN,
+    type: ActionStrings.RELOGIN,
     payload,
   }),
 

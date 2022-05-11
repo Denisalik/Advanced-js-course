@@ -6,7 +6,9 @@ import {
   Dialog,
   DialogTitle,
   DialogActions,
+  Button,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Logo from "../shared/icons/Logo";
 import AppButton from "../shared/AppButton/AppButton";
 import UserIcon from "../shared/icons/UserIcon";
@@ -17,21 +19,53 @@ import Copy from "../shared/icons/Copy";
 import Game from "../game/Game";
 import { useAppActions, useAppSelector } from "../../lib/hooks";
 import Modal from "./Modal";
+import { PathStrings } from "../../lib/urls";
 
 const Home: React.FC = () => {
-  const { relogin } = useAppActions();
+  const {
+    joinRoom,
+    pauseGame,
+    startGame,
+    gameData,
+    interrupt,
+    locationUpdate,
+    winnerUpdate,
+    scoreUpdate,
+  } = useAppActions();
+  const { game } = useAppSelector(state => state.game);
   const auth = useAppSelector(state => state.auth);
+  const navigate = useNavigate();
   React.useEffect(() => {
-    if (auth.token) relogin({ token: auth.token });
+    // const loaded = auth.expirationDate < new Date();
+    //todo add checking for exp date(redux token="")
+    // if(loaded)zerotoken + navigate
+    if (auth.token === "") navigate(PathStrings.AUTH);
   }, [auth.token]);
-  const loaded =
-    auth.email ||
-    auth.background - 1 ||
-    auth.avatar - 1 ||
-    auth.expirationDate < new Date() ||
-    auth.username;
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(!open);
+  const [room, setRoom] = React.useState("");
+  const [connected, setConnected] = React.useState(false);
+  const connect = () => {
+    if (room !== "") {
+      joinRoom(auth.username, room);
+      setConnected(true);
+    }
+  };
+  React.useEffect(() => {
+    const frameRate = 20;
+    startGame();
+    gameData();
+    locationUpdate();
+    scoreUpdate();
+    interrupt();
+  }, []);
+  //todo add connected to redux state, instead of useState
+  React.useEffect(() => {
+    if (connected) {
+      winnerUpdate(room);
+      setConnected(false);
+    }
+  }, [connected]);
   return (
     <>
       <Dialog open={open} onClose={handleClose}>
@@ -42,15 +76,11 @@ const Home: React.FC = () => {
           <AppButton onClick={handleClose}>Save</AppButton>
         </DialogActions>
       </Dialog>
-      <Grid
-        container
-        flexDirection="column"
-        sx={{ height: "100vh", width: "100vw" }}
-      >
+      <Grid container flexDirection="column">
         <Grid item pt="17px" pl="50px">
           <Logo
             sx={{
-              height: "55px",
+              height: "50px",
               width: "255px",
             }}
           />
@@ -72,7 +102,10 @@ const Home: React.FC = () => {
                   borderRadius: "50%",
                 }}
               >
-                <Pause sx={{ width: "50px", height: "50px" }} />
+                <Pause
+                  sx={{ width: "50px", height: "50px" }}
+                  onClick={pauseGame}
+                />
               </AppButton>
             </Grid>
             <Grid item my={3}>
@@ -122,12 +155,12 @@ const Home: React.FC = () => {
                   iconVariant={1}
                 />
                 <Typography variant="h6" sx={{ color: "white" }}>
-                  Jame_Haden
+                  {game.state.p1.name}
                 </Typography>
               </Grid>
               <Grid item xs={3}>
                 <Typography align="center" variant="h5" color="#FFA726">
-                  Paused
+                  {game.state.p1.paused ? "Paused" : "Ready"}
                 </Typography>
               </Grid>
               <Grid item xs={4} container justifyContent="center">
@@ -144,7 +177,7 @@ const Home: React.FC = () => {
                     }}
                   >
                     <Typography variant="h2" color="white">
-                      10
+                      {game.state.p1.score}
                     </Typography>
                   </Box>
                 </Grid>
@@ -162,14 +195,14 @@ const Home: React.FC = () => {
                     }}
                   >
                     <Typography variant="h2" color="white">
-                      10
+                      {game.state.p2.score}
                     </Typography>
                   </Box>
                 </Grid>
               </Grid>
               <Grid item xs={3}>
                 <Typography align="center" variant="h5" color="#66BB6A">
-                  Ready
+                  {game.state.p2.paused ? "Paused" : "Ready"}
                 </Typography>
               </Grid>
               <Grid
@@ -184,7 +217,7 @@ const Home: React.FC = () => {
                   iconVariant={2}
                 />
                 <Typography sx={{ color: "white" }} variant="h6">
-                  Nikita_Ivanov
+                  {game.state.p2.name}
                 </Typography>
                 {/*todo color to the theme*/}
               </Grid>
@@ -198,7 +231,7 @@ const Home: React.FC = () => {
               flexDirection="row"
               justifyContent="center"
               alignItems="center"
-              my={3.5}
+              mt={2}
             >
               <Grid item mr={2}>
                 <Typography color="#60BEED" variant="h6">
@@ -207,26 +240,17 @@ const Home: React.FC = () => {
               </Grid>
               <Grid item>
                 <AppTextField
-                  sx={{ height: "50px", background: "white" }}
-                  disabled
-                  label="http://..."
+                  sx={{ height: 50, background: "white" }}
+                  onChange={e => setRoom(e.target.value)}
+                  label="Room Name"
                 />
               </Grid>
               <Grid item>
                 <AppButton sx={{ height: "50px" }}>
                   <Grid container alignItems="center">
                     <Grid item>
-                      <Copy
-                        sx={{
-                          height: "19px",
-                          width: "19px",
-                          marginRight: "6px",
-                        }}
-                      />
-                    </Grid>
-                    <Grid item>
-                      <Typography variant="h6" color="white">
-                        Copy
+                      <Typography variant="h6" color="white" onClick={connect}>
+                        Connect
                       </Typography>
                     </Grid>
                   </Grid>

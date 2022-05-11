@@ -1,39 +1,36 @@
-import React, { useEffect } from "react";
-import { Box, Grid } from "@mui/material";
-import { Board } from "./GameStyled";
-import Ball from "../shared/icons/Ball";
+import React from "react";
+import { Grid } from "@mui/material";
+import { KeyboardKeys } from "../../lib/socket/types";
+import { useAppActions, useAppSelector } from "../../lib/hooks";
+import Canvas from "./canvas/Canvas";
 
 const Game: React.FC = () => {
-  //connect to socket
-  useEffect(() => {}, []);
+  const { player } = useAppSelector(state => state.game);
+  const { changeDirection, movePlayer } = useAppActions();
+  React.useEffect(() => {
+    window.addEventListener("keydown", e => {
+      if (player.direction) return;
+      switch (e.key) {
+        case KeyboardKeys.Up:
+          changeDirection(1);
+          break;
+        case KeyboardKeys.Down:
+          changeDirection(-1);
+          break;
+        default:
+          break;
+      }
+    });
+    window.addEventListener("keyup", e => {
+      if (e.key === KeyboardKeys.Up || e.key === KeyboardKeys.Down) {
+        changeDirection(0);
+      }
+    });
+  }, []);
   return (
-    <>
-      <Ball
-        sx={{
-          position: "absolute",
-          left: "40%",
-          top: "50%",
-          width: "34px",
-          height: "34px",
-        }}
-      />
-      <Grid
-        container
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{ background: "white", height: "600px" }}
-      >
-        <Board />
-        <Box
-          sx={{
-            border: "none",
-            borderLeft: "4px dashed #60BEED", //todo theme
-            height: "100%",
-          }}
-        />
-        <Board />
-      </Grid>
-    </>
+    <Grid container justifyContent="center" sx={{ width: "100%" }}>
+      <Canvas move={movePlayer} />
+    </Grid>
   );
 };
 

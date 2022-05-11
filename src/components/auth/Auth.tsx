@@ -1,10 +1,23 @@
 import React from "react";
 import { Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import SignIn from "./login/SignIn";
 import SignUp from "./registration/SignUp";
 import Logo from "../shared/icons/Logo";
+import { PathStrings } from "../../lib/urls";
+import { useAppActions, useAppSelector } from "../../lib/hooks";
 
 const Auth: React.FC = () => {
+  const { token } = useAppSelector(state => state.auth);
+  const { relogin } = useAppActions();
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    if (token) {
+      //todo add error checking for relogin
+      relogin({ token });
+      navigate(PathStrings.HOME);
+    }
+  }, [token]);
   const [page, setPage] = React.useState(0);
   const handleChange = (event: React.SyntheticEvent, newPage: number) => {
     setPage(newPage);

@@ -1,23 +1,14 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import AppTextField from "../../shared/AppTextField/AppTextField";
 import AppButton from "../../shared/AppButton/AppButton";
-import { useAppActions, useAppSelector } from "../../../lib/hooks";
-import { PathStrings } from "../../../lib/urls";
+import { useAppActions } from "../../../lib/hooks";
 
 const SignUp: React.FC = () => {
-  const { token } = useAppSelector(state => state.auth);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [email, setEmail] = React.useState("");
   const { registration } = useAppActions();
-  const navigate = useNavigate();
-  React.useEffect(() => {
-    if (token) {
-      navigate(PathStrings.HOME);
-    }
-  }, [token]);
   const onChangeUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };

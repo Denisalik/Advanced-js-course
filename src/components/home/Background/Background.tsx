@@ -6,5 +6,6 @@ export default styled(Box)(({ theme }) => ({
   alignItems: "center",
   background: theme.palette.backgrounds.primary,
   // backgroundImage: "./bk_image.jpg", //todo
-  minHeight: "100vh",
+  height: "100vh",
+  width: "100vw",
 }));

@@ -19,17 +19,36 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
+    "no-alert": "off",
+    "@typescript-eslint/lines-between-class-members": [
+      "off",
+      "never"
+    ],
+    "max-classes-per-file": "off",
     "no-console": "off",
     "spaced-comment": "off",
-    "prettier/prettier": ["warn"],
+    "prettier/prettier": [
+      "warn"
+    ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ],
     "jsx-a11y/label-has-associated-control": "off",
     "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
     "semi": "error",
     "no-multi-spaces": "error",
     "space-in-parens": "error",
@@ -46,7 +65,14 @@
     ],
     "react/jsx-filename-extension": [
       2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     ],
     "import/extensions": [
       "error",
@@ -61,6 +87,11 @@
     ],
     "default-param-last": "off",
     "@typescript-eslint/default-param-last": "off",
-    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ]
   }
 }
