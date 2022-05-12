@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>18/21</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -128,31 +128,31 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,7 +192,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import { Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -202,22 +202,22 @@ import Logo from "../shared/icons/Logo";
 import { PathStrings } from "../../lib/urls";
 import { useAppActions, useAppSelector } from "../../lib/hooks";
 &nbsp;
-const Auth: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { token } = <span class="cstat-no" title="statement not covered" >useAppSelector(<span class="fstat-no" title="function not covered" >st</span>ate =&gt; <span class="cstat-no" title="statement not covered" >state.auth)</span>;</span>
-  const { relogin } = <span class="cstat-no" title="statement not covered" >useAppActions();</span>
-  const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
-<span class="cstat-no" title="statement not covered" >  React.useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (token) {</span>
+const Auth: React.FC = () =&gt; {
+  const { token } = useAppSelector(state =&gt; state.auth);
+  const { relogin } = useAppActions();
+  const navigate = useNavigate();
+  React.useEffect(() =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (token) {
       //todo add error checking for relogin
 <span class="cstat-no" title="statement not covered" >      relogin({ token });</span>
 <span class="cstat-no" title="statement not covered" >      navigate(PathStrings.HOME);</span>
     }
   }, [token]);
-  const [page, setPage] = <span class="cstat-no" title="statement not covered" >React.useState(0);</span>
-  const handleChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent: React.SyntheticEvent, newPage: number) =&gt; {</span>
+  const [page, setPage] = React.useState(0);
+  const handleChange = <span class="fstat-no" title="function not covered" >(e</span>vent: React.SyntheticEvent, newPage: number) =&gt; {
 <span class="cstat-no" title="statement not covered" >    setPage(newPage);</span>
   };
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;Grid
       container
       justifyContent="center"
@@ -238,7 +238,7 @@ const Auth: React.FC = <span class="cstat-no" title="statement not covered" ><sp
           elevation={1}
           sx={{
             width: "476px",
-            height: page === 0 ? "497px" : "577px",
+            height: page === 0 ? "497px" : <span class="branch-1 cbranch-no" title="branch not covered" >"577px",</span>
             padding: "0 30px 30px 30px",
           }}
         &gt;
@@ -249,7 +249,7 @@ const Auth: React.FC = <span class="cstat-no" title="statement not covered" ><sp
                 &lt;Tab label={&lt;Typography variant="h5"&gt;Sign up&lt;/Typography&gt;} /&gt;
               &lt;/Tabs&gt;
             &lt;/Grid&gt;
-            &lt;Grid item&gt;{page === 0 ? &lt;SignIn /&gt; : &lt;SignUp /&gt;}&lt;/Grid&gt;
+            &lt;Grid item&gt;{page === 0 ? &lt;SignIn /&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >&lt;SignUp /&gt;}</span>&lt;/Grid&gt;
           &lt;/Grid&gt;
         &lt;/Paper&gt;
       &lt;/Grid&gt;
@@ -265,7 +265,7 @@ export default Auth;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu May 12 2022 13:24:16 GMT+0300 (Москва, стандартное время)
+                at Thu May 12 2022 14:41:47 GMT+0300 (Москва, стандартное время)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

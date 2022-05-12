@@ -4,28 +4,17 @@ module.exports = {
   testEnvironment: "jsdom",
   transform: {
     "^.+\\.jsx?$": "babel-jest",
-    "^.+\\.tsx?$": "ts-jest",
-    // "\\.tsx?$": "ts-jest",
-    // "\\.jsx?$": "babel-jest",
+    "^.+\\.(t|j)sx?$": "ts-jest",
   },
+  transformIgnorePatterns: [
+    // Change MODULE_NAME_HERE to your module that isn't being compiled
+    // "/node_modules/(?!@mui).+\\.js$",
+    "node_modules/(?!(@mui|@babel)/)"
+  ],
   moduleNameMapper: {
     "@ijl.cli": "<rootDir>/ijl-cli.js",
   },
-  // transformIgnorePatterns: ["<rootDir>/__test__./*./","node_modules/@mui/", "node_modules/@ijl/.*"],
-  //this shows another error
-  // transform: {
-  //   "node_modules/@mui/.+\\.(j|t)sx?$": "ts-jest",
-  // },
-  // transformIgnorePatterns: ["node_modules/(?!@mui/.*)"],
-  // moduleNameMapper: {
-  //   "^@ijl/cli$": "<rootDir>/ijl.cli.js",
-  // },
   testMatch: ["<rootDir>/__test__/*.(test|spec).(ts|tsx)"],
-  // transform: {
-  //   "^.+\\.tsx?$": "ts-jest",
-  // },
-  // testEnvironment: "jsdom",
-
   verbose: true,
   collectCoverage: false,
   // An array of glob patterns indicating a set of files for which coverage information should be collected
