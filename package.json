@@ -12,8 +12,7 @@
     "prepare": "husky install",
     "lint": "eslint --ext .tsx,.ts src/",
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
-    "test": "jest",
-    "test:cov": "jest --coverage"
+    "test": "jest"
   },
   "browserslist": [
     ">0.2%",

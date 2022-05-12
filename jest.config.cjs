@@ -8,7 +8,7 @@ module.exports = {
   },
   transformIgnorePatterns: [
     // If you have error about imports from node_modules, that means they are using ESM and you need to ignore them.
-    "node_modules/(?!(@mui|@babel)/)"
+    "node_modules/(?!(@mui|@babel)/)",
   ],
   moduleNameMapper: {
     "@ijl.cli": "<rootDir>/ijl-cli.js",
@@ -22,6 +22,7 @@ module.exports = {
   coverageDirectory: "<rootDir>/reports/coverage",
   coverageReporters: [
     [
+      "text",
       "html",
       { subdir: "html" },
     ],
