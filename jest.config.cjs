@@ -13,6 +13,9 @@ module.exports = {
   //   "node_modules/@mui/.+\\.(j|t)sx?$": "ts-jest",
   // },
   // transformIgnorePatterns: ["node_modules/(?!@mui/.*)"],
+  // moduleNameMapper: {
+  //   "^@ijl/cli$": "<rootDir>/ijl.cli.js",
+  // },
   testMatch: ["<rootDir>/__test__/*.(test|spec).(ts|tsx)"],
   transform: {
     "^.+\\.tsx?$": "ts-jest",

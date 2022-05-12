@@ -27,7 +27,7 @@ module.exports = {
   //     // add your features here in the format [featureName]: { value: string }
   //   },
   // },
-  // config: {
-  //   key: "value",
-  // },
+  config: {
+    key: "value",
+  },
 };
