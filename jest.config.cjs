@@ -1,14 +1,17 @@
 /** @type {import("ts-jest/dist/types").InitialOptionsTsJest} */
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
   transform: {
-    "^.+\\.[j|t]sx?$": "babel-jest",
+    "^.+\\.jsx?$": "babel-jest",
     "^.+\\.tsx?$": "ts-jest",
     // "\\.tsx?$": "ts-jest",
     // "\\.jsx?$": "babel-jest",
   },
-  transformIgnorePatterns: ["<rootDir>/__test__./*./","node_modules/@mui/", "node_modules/@ijl/.*"],
+  moduleNameMapper: {
+    "@ijl.cli": "<rootDir>/ijl-cli.js",
+  },
+  // transformIgnorePatterns: ["<rootDir>/__test__./*./","node_modules/@mui/", "node_modules/@ijl/.*"],
   //this shows another error
   // transform: {
   //   "node_modules/@mui/.+\\.(j|t)sx?$": "ts-jest",
