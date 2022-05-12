@@ -15,7 +15,7 @@ module.exports = {
   },
   testMatch: ["<rootDir>/__test__/*.(test|spec).(ts|tsx)"],
   verbose: true,
-  collectCoverage: false,
+  collectCoverage: true,
   collectCoverageFrom: [
     "./src/**/*.ts?(x)",
   ],
