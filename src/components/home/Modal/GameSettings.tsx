@@ -24,6 +24,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
       <Grid container>
         {[...Array(6).keys()].map(i => (
           <Box
+            key={i}
             sx={{
               ...(i === avatar
                 ? {
@@ -57,6 +58,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
       <Grid container>
         {[...Array(5).keys()].map(i => (
           <Box
+            key={i}
             sx={{
               ...(i === background
                 ? {

@@ -53,6 +53,20 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({
           sx={{ height: "50px", width: "416px" }}
         />
       </Grid>
+      <Grid item my={2}>
+        <AppTextField
+          label="New Username"
+          error={errorNewUsername}
+          helperText={
+            errorNewUsername
+              ? "Length of the password should be more than 2 and less than 20"
+              : ""
+          }
+          value={newUsername}
+          onChange={onChangeNewUsername}
+          sx={{ height: "50px", width: "416px" }}
+        />
+      </Grid>
       <Grid item>
         <Typography variant="h5">Password</Typography>
       </Grid>
@@ -67,21 +81,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({
           }
           value={password}
           onChange={onChangePassword}
-          label="Current Password"
-          sx={{ height: "50px", width: "416px" }}
-        />
-      </Grid>
-      <Grid item my={2}>
-        <AppTextField
-          label="New Username"
-          error={errorNewUsername}
-          helperText={
-            errorNewUsername
-              ? "Length of the password should be more than 2 and less than 20"
-              : ""
-          }
-          value={newUsername}
-          onChange={onChangeNewUsername}
+          label="Password"
           sx={{ height: "50px", width: "416px" }}
         />
       </Grid>

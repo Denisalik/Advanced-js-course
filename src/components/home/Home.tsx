@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     winnerUpdate,
     scoreUpdate,
   } = useAppActions();
-  const { game } = useAppSelector(state => state.game);
+  const { game, player } = useAppSelector(state => state.game);
   const auth = useAppSelector(state => state.auth);
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
             >
               <UserIcon
                 sx={{ height: "60px", width: "60px" }}
-                iconVariant={1}
+                iconVariant={auth.username === player.name ? auth.avatar : 1}
               />
               <Typography variant="h6" sx={{ color: "white" }}>
                 {game.state.p1.name}
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
             >
               <UserIcon
                 sx={{ height: "60px", width: "60px" }}
-                iconVariant={2}
+                iconVariant={auth.username === player.name ? auth.avatar : 1}
               />
               <Typography sx={{ color: "white" }} variant="h6">
                 {game.state.p2.name}
