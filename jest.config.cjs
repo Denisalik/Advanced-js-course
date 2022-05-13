@@ -22,10 +22,9 @@ module.exports = {
   coverageDirectory: "<rootDir>/reports/coverage",
   coverageReporters: [
     [
-      "text",
       "html",
       { subdir: "html" },
-    ],
+    ],["text"]
   ],
 };
 //80% and at least 1 ui test
