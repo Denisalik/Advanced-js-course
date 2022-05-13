@@ -17,6 +17,8 @@ to install dependencies:`npm install`
 
 to start dev server: `npm start`
 
+Project has authorization, game and settings pages.
+
 Links:
  * [Frontend](https://github.com/Denisalik/Advanced-js-course)
  * [Backend](https://github.com/Denisalik/js-course-backend)
