@@ -23,6 +23,15 @@ export const reducer = (
   action: ActionTypes
 ): AuthState => {
   switch (action.type) {
+    //todo is it needed to change?
+    // case ActionStrings.CHANGE_ACCOUNT_SETTINGS:
+    //   return { ...state, avatar: action.payload. };
+    case ActionStrings.CHANGE_GAME_SETTINGS:
+      return {
+        ...state,
+        avatar: action.payload.avatar,
+        background: action.payload.background,
+      };
     case ActionStrings.SAVE_TOKEN:
       return { ...state, token: action.payload };
     case ActionStrings.LOGIN:

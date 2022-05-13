@@ -9,6 +9,18 @@ export interface CredentialsRegistration {
   password: string;
 }
 
+export interface GameSettings {
+  background: number;
+  avatar: number;
+  username: string;
+}
+
+export interface AccountSettings {
+  username: string;
+  password: string;
+  newUsername: string;
+}
+
 export interface Token {
   token: string;
 }

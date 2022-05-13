@@ -7,7 +7,9 @@ interface UserIconProps extends SvgIconProps {
 
 /**
  * Icon for user
+ * @param sx
  * @param   {number} iconVariant variant from 1 to 6
+ * @param props
  */
 const UserIcon: React.FC<UserIconProps> = ({ sx, iconVariant, ...props }) => {
   const icon1 = (

@@ -4,9 +4,10 @@ import { Game } from "../../../lib/socket/types";
 
 interface CanvasProps {
   move: () => () => Promise<void>;
+  color: string;
 }
 
-const Canvas: React.FC<CanvasProps> = ({ move: movePlayer }) => {
+const Canvas: React.FC<CanvasProps> = ({ move: movePlayer, color }) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const drawCanvas = (game: Game) => {
     const canvas = canvasRef.current;
@@ -63,7 +64,7 @@ const Canvas: React.FC<CanvasProps> = ({ move: movePlayer }) => {
       style={{
         height: 600,
         width: 1100,
-        backgroundColor: "white",
+        backgroundColor: color,
       }}
     />
   );

@@ -1,41 +1,38 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import AppTextField from "../../shared/AppTextField/AppTextField";
-import { useAppActions, useAppSelector } from "../../../lib/hooks";
 
-const AccountSettings: React.FC = () => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [newPassword, setNewPassword] = React.useState("");
+interface AccountSettingsProps {
+  username: string;
+  password: string;
+  newUsername: string;
+  setUsername: (username: string) => void;
+  setPassword: (password: string) => void;
+  setNewUsername: (newUsername: string) => void;
+  errorUsername: boolean;
+  errorPassword: boolean;
+  errorNewUsername: boolean;
+}
+
+const AccountSettings: React.FC<AccountSettingsProps> = ({
+  password,
+  setPassword,
+  setUsername,
+  username,
+  errorPassword,
+  errorUsername,
+  errorNewUsername,
+  newUsername,
+  setNewUsername,
+}) => {
   const onChangeUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
   const onChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-  const onChangeNewPassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewPassword(event.target.value);
-  };
-
-  const [errorUsername, setErrorUsername] = React.useState(false);
-  const [errorPassword, setErrorPassword] = React.useState(false);
-  const [errorNewPassword, setNewErrorPassword] = React.useState(false);
-  const validate = () => {
-    let errorState = true;
-    if (username.length < 3 || username.length > 20) {
-      errorState = false;
-      setErrorUsername(true);
-    }
-    if (password.length < 3 || password.length > 20) {
-      errorState = false;
-      setErrorPassword(true);
-    }
-    if (newPassword.length < 3 || newPassword.length > 20) {
-      errorState = false;
-      setNewErrorPassword(true);
-    }
-    //todo if password!=newPassword
-    return errorState;
+  const onChangeNewUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewUsername(event.target.value);
   };
   return (
     <Grid container flexDirection="column">
@@ -76,16 +73,15 @@ const AccountSettings: React.FC = () => {
       </Grid>
       <Grid item my={2}>
         <AppTextField
-          type="password"
-          error={errorNewPassword}
+          label="New Username"
+          error={errorNewUsername}
           helperText={
-            errorNewPassword
+            errorNewUsername
               ? "Length of the password should be more than 2 and less than 20"
               : ""
           }
-          value={newPassword}
-          onChange={onChangeNewPassword}
-          label="New Password"
+          value={newUsername}
+          onChange={onChangeNewUsername}
           sx={{ height: "50px", width: "416px" }}
         />
       </Grid>

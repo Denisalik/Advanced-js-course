@@ -7,9 +7,43 @@ import {
   CredentialsRegistration,
   UserInfo,
 } from "../../entities";
-import { loginURL, registrationURL, reloginURL } from "../../api/auth";
+import {
+  changeAccountSettingsURL,
+  changeGameSettingsURL,
+  loginURL,
+  registrationURL,
+  reloginURL,
+} from "../../api/auth";
 
 const expPeriod = 86400;
+
+export const changeGameSettings =
+  (avatar: number, background: number, username: string) =>
+  async (dispatch: Dispatch) => {
+    const payload = { avatar, background, username };
+    await axios
+      .post(changeGameSettingsURL(), payload)
+      .then(response => {
+        dispatch(actions.changeGameSettings(payload));
+      })
+      .catch(e => {
+        console.log(e.message);
+      });
+  };
+
+export const changeAccountSettings =
+  (username: string, password: string, newUsername: string) =>
+  async (dispatch: Dispatch) => {
+    const payload = { username, password, newUsername };
+    await axios
+      .post(changeAccountSettingsURL(), payload)
+      .then(response => {
+        dispatch(actions.changeAccountSettings(payload));
+      })
+      .catch(e => {
+        console.log(e.message);
+      });
+  };
 
 export const login =
   (credentials: Credentials) => async (dispatch: Dispatch) => {

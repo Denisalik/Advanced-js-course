@@ -3,9 +3,12 @@ import { Grid } from "@mui/material";
 import { KeyboardKeys } from "../../lib/socket/types";
 import { useAppActions, useAppSelector } from "../../lib/hooks";
 import Canvas from "./canvas/Canvas";
+import { backgroundVariants } from "../../lib/constants";
 
 const Game: React.FC = () => {
   const { player } = useAppSelector(state => state.game);
+  const { background } = useAppSelector(state => state.auth);
+  const color = backgroundVariants[background - 1];
   const { changeDirection, movePlayer } = useAppActions();
   React.useEffect(() => {
     window.addEventListener("keydown", e => {
@@ -29,7 +32,7 @@ const Game: React.FC = () => {
   }, []);
   return (
     <Grid container justifyContent="center" sx={{ width: "100%" }}>
-      <Canvas move={movePlayer} />
+      <Canvas color={color} move={movePlayer} />
     </Grid>
   );
 };

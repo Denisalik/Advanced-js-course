@@ -21,6 +21,7 @@ module.exports = {
   navigations: {
     "lichessengine.main": "/lichessengine/home",
     "lichessengine.auth": "/lichessengine/auth",
+    "lichessengine.settings": "/lichessengine/settings",
   },
   // features: {
   //   "lichessengine.main": {

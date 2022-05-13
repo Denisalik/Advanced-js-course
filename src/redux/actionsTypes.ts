@@ -1,4 +1,4 @@
-import { UserInfo } from "./entities";
+import { AccountSettings, GameSettings, UserInfo } from "./entities";
 import {
   GameData,
   Interrupt,
@@ -24,6 +24,19 @@ export enum ActionStrings {
   VALIDATE_CONNECTION = "VALIDATE_CONNECTION",
   SAVE_ROOM = "SAVE_ROOM",
   PAUSE_GAME = "PAUSE_GAME",
+  //Settings
+  CHANGE_GAME_SETTINGS = "CHANGE_GAME_SETTINGS",
+  CHANGE_ACCOUNT_SETTINGS = "CHANGE_ACCOUNT_SETTINGS",
+}
+
+interface ChangeGameSettings {
+  type: ActionStrings.CHANGE_GAME_SETTINGS;
+  payload: GameSettings;
+}
+
+interface ChangeAccountSettings {
+  type: ActionStrings.CHANGE_ACCOUNT_SETTINGS;
+  payload: AccountSettings;
 }
 
 interface ValidateConnection {
@@ -108,4 +121,6 @@ export type ActionTypes =
   | ChangeDirection
   | ValidateConnection
   | SaveRoom
-  | PauseGame;
+  | PauseGame
+  | ChangeGameSettings
+  | ChangeAccountSettings;

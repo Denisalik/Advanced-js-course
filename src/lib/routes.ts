@@ -1,22 +1,23 @@
 import React from "react";
 import Auth from "../components/auth/Auth";
 import Home from "../components/home/Home";
+import Modal from "../components/home/Modal";
 import { PathStrings } from "./urls";
-import { useAppSelector } from "./hooks";
 
 // const AuthComponent = React.lazy(() => import("../components/auth/Auth"));
 // const HomeComponent = React.lazy(() => import("../components/game/Home"));
 
-const AuthComponent = Auth;
-const HomeComponent = Home;
-
 export const routes = [
   {
     path: PathStrings.AUTH,
-    element: AuthComponent,
+    element: Auth,
   },
   {
     path: PathStrings.HOME,
-    element: HomeComponent,
+    element: Home,
+  },
+  {
+    path: PathStrings.SETTINGS,
+    element: Modal,
   },
 ];
