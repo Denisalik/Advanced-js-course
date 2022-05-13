@@ -1,6 +1,6 @@
 {
   "name": "lichessengine",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "PongMe game",
   "main": "./src/index.tsx",
   "scripts": {
