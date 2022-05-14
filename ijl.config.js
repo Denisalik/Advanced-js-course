@@ -29,6 +29,7 @@ module.exports = {
     },
   },
   config: {
-    key: "value",
+    "LichessEngine.backendurl": "http://pongme-backend.herokuapp.com",
+    "LichessEngine.backendport": "8080",
   },
 };

@@ -1,6 +1,8 @@
+import { getConfig } from "@ijl/cli";
+
 export const api = {
-  URL: process.env.REACT_APP_API_URL,
-  PORT: process.env.REACT_APP_API_PORT,
+  URL: getConfig()["LichessEngine.backendurl"],
+  PORT: getConfig()["LichessEngine.backendport"],
   API: {
     API: "api",
     AUTH: "auth",
