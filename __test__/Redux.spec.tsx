@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 import { routes } from "../src/lib/routes";
 import { reducer as auth } from "../src/redux/reducers/auth";
 import { ActionStrings, ActionTypes } from "../src/redux/actionsTypes";
+import { actions as authActions } from "../src/redux/actions/auth";
 
 jest.useFakeTimers();
 
@@ -44,5 +45,9 @@ describe("Redux", () => {
     expect(
       auth(undefined, { type: ActionStrings.SAVE_TOKEN, payload: token }).token
     ).toEqual(token);
+  });
+  it("actions auth save_token", () => {
+    const token = "asd";
+    expect(authActions.saveToken(token).type).toEqual(ActionStrings.SAVE_TOKEN);
   });
 });
