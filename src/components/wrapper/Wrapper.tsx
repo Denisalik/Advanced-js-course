@@ -6,10 +6,6 @@ import { PathStrings } from "../../lib/urls";
 import { useAppActions } from "../../lib/hooks";
 
 const Wrapper: React.FC = () => {
-  React.useEffect(() => {
-    console.log(window.location.pathname);
-    console.log(window.history);
-  }, [window]);
   const { saveToken } = useAppActions();
   React.useEffect(() => {
     const token = localStorage.getItem("token");

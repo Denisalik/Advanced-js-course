@@ -19,12 +19,12 @@ module.exports = {
     },
   },
   navigations: {
-    "lichessengine.main": "/lichessengine/home",
-    "lichessengine.auth": "/lichessengine/auth",
-    "lichessengine.settings": "/lichessengine/settings",
+    "LichessEngine.main": "/LichessEngine/home",
+    "LichessEngine.auth": "/LichessEngine/auth",
+    "LichessEngine.settings": "/LichessEngine/settings",
   },
   features: {
-    "lichessengine.main": {
+    "LichessEngine.main": {
       // add your features here in the format [featureName]: { value: string }
     },
   },

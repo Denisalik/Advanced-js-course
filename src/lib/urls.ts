@@ -1,6 +1,6 @@
 import { getNavigations } from "@ijl/cli";
 
-const domen = "lichessengine";
+const domen = "LichessEngine";
 const navigations = getNavigations();
 
 const homeURL = navigations[`${domen}.main`];
