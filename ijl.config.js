@@ -23,11 +23,11 @@ module.exports = {
     "lichessengine.auth": "/lichessengine/auth",
     "lichessengine.settings": "/lichessengine/settings",
   },
-  // features: {
-  //   "lichessengine.main": {
-  //     // add your features here in the format [featureName]: { value: string }
-  //   },
-  // },
+  features: {
+    "lichessengine.main": {
+      // add your features here in the format [featureName]: { value: string }
+    },
+  },
   config: {
     key: "value",
   },

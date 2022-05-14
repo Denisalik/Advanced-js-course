@@ -6,6 +6,10 @@ import { PathStrings } from "../../lib/urls";
 import { useAppActions } from "../../lib/hooks";
 
 const Wrapper: React.FC = () => {
+  React.useEffect(() => {
+    console.log(window.location.pathname);
+    console.log(window.history);
+  }, [window]);
   const { saveToken } = useAppActions();
   React.useEffect(() => {
     const token = localStorage.getItem("token");
@@ -22,13 +26,15 @@ const Wrapper: React.FC = () => {
         {routes.map(route => (
           <Route
             key={route.path}
-            path={route.path as unknown as string}
+            // @ts-ignore
+            path={route.path}
             element={<route.element />}
           />
         ))}
         <Route
           path="*"
-          element={<Navigate to={PathStrings.AUTH as unknown as string} />}
+          // @ts-ignore
+          element={<Navigate to={PathStrings.AUTH} />}
         />
       </Routes>
     </Background>

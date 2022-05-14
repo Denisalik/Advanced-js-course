@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Grid,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogActions,
-  Button,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Logo from "../shared/icons/Logo";
 import AppButton from "../shared/AppButton/AppButton";
@@ -17,7 +9,6 @@ import Pause from "../shared/icons/Pause";
 import Settings from "../shared/icons/Settings";
 import Game from "../game/Game";
 import { useAppActions, useAppSelector } from "../../lib/hooks";
-import Modal from "./Modal";
 import { PathStrings } from "../../lib/urls";
 
 const Home: React.FC = () => {
@@ -41,7 +32,7 @@ const Home: React.FC = () => {
   }, [auth.token]);
 
   const handleSettings = () => {
-    navigate(PathStrings.SETTINGS as unknown as string);
+    navigate(PathStrings.SETTINGS);
   };
   const [room, setRoom] = React.useState("");
   const [connected, setConnected] = React.useState(false);

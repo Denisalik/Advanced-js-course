@@ -1,12 +1,12 @@
 {
   "name": "lichessengine",
-  "version": "v1.4.2",
+  "version": "v1.4.3",
   "description": "PongMe game",
   "main": "./src/index.tsx",
   "scripts": {
     "start": "ijl-cli --server --port=3000 --with-open-browser",
-    "build": "npm run clean && ijl-cli --build --dev",
-    "build:prod": "npm run clean && ijl-cli --build",
+    "build:prod": "npm run clean && ijl-cli --build --dev",
+    "build": "npm run clean && ijl-cli --build",
     "clean": "rimraf dist",
     "tsc": "tsc",
     "prepare": "husky install",
@@ -63,6 +63,7 @@
     "axios": "^0.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.2",
+    "history": "^5.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
