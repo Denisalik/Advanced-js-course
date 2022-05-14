@@ -14,9 +14,9 @@ describe("Redux", () => {
   beforeEach(cleanup);
   it("routes", () => {
     expect(routes.map(route => route.path)).toEqual([
-      "/lichessengine/auth",
-      "/lichessengine/home",
-      "/lichessengine/settings",
+      "/LichessEngine/auth",
+      "/LichessEngine/home",
+      "/LichessEngine/settings",
     ]);
   });
   //   src/redux/action-creators/auth     |   30.76 |      100 |       0 |      35 |
